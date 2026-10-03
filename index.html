@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мій магазин — товар</title>
+  <meta name="description" content="Односторінковий магазин товару">
+  <style>
+    :root{--accent:#e53935;--dark:#191919;--light:#f7f7f7;--max:980px}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;color:var(--dark);background:#fff}
+    .wrap{max-width:var(--max);margin:auto;padding:0 16px}
+    .top{background:#111;color:#fff;text-align:center;padding:10px;font-weight:700}
+    .hero{padding:28px 0;background:linear-gradient(#fff,#fafafa)}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+    .product-img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;background:#eee}
+    .badge{display:inline-block;background:var(--accent);color:#fff;padding:7px 12px;border-radius:8px;font-weight:700}
+    h1{font-size:42px;line-height:1.05;margin:14px 0}
+    .rating{margin:10px 0}.old{text-decoration:line-through;color:#888;font-size:20px}.price{font-size:40px;font-weight:800;color:var(--accent);margin:5px 0 16px}
+    .form{background:#fff;padding:18px;border-radius:16px;box-shadow:0 8px 30px #0001}
+    input,button{width:100%;padding:15px;border-radius:10px;font-size:16px;margin:6px 0}
+    input{border:1px solid #ccc}button{border:0;background:var(--accent);color:#fff;font-weight:800;cursor:pointer}
+    .note{font-size:12px;color:#777;text-align:center}
+    .features{padding:25px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .feature{padding:18px;border-radius:14px;background:var(--light);text-align:center}
+    section{padding:42px 0}.section-title{text-align:center;font-size:30px;margin:0 0 24px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fafafa;border-radius:16px;padding:20px}
+    .specs{max-width:700px;margin:auto}.specs div{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding:12px 0;gap:20px}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.review{border:1px solid #eee;border-radius:16px;padding:18px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}.step{padding:20px;background:#fafafa;border-radius:16px}
+    .final{background:#111;color:#fff;padding:45px 0}.final .form{color:#111;max-width:500px;margin:auto}
+    footer{padding:25px 0;text-align:center;color:#777;font-size:13px}
+    @media(max-width:720px){.hero-grid,.cards,.reviews,.steps,.features{grid-template-columns:1fr}h1{font-size:34px}.hero{padding-top:18px}}
+  </style>
+</head>
+<body>
+
+  <!-- ===== РЕДАГУВАННЯ ТОВАРУ ПОЧИНАЄТЬСЯ ТУТ ===== -->
+  <div id="config" hidden>
+    <span data-name>Ручний відпарювач для одягу</span>
+    <span data-old-price>1000</span>
+    <span data-price>499</span>
+    <span data-discount>50%</span>
+    <span data-image>images/product.jpg</span>
+  </div>
+  <!-- ===== РЕДАГУВАННЯ ТОВАРУ ЗАКІНЧУЄТЬСЯ ТУТ ===== -->
+
+  <div class="top">🔥 Акційна пропозиція — кількість товару обмежена!</div>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <img class="product-img" src="images/product.jpg" alt="Фото товару">
+        </div>
+        <div>
+          <div class="badge">ЗНИЖКА <span class="discount">50%</span></div>
+          <div class="rating">⭐ 4.8/5 · Відгуки покупців</div>
+          <h1 class="product-name">Ручний відпарювач для одягу</h1>
+          <div class="old"><span class="old-price">1000</span> грн</div>
+          <div class="price"><span class="current-price">499</span> грн</div>
+          <p>Зручний спосіб швидко привести одяг до охайного вигляду.</p>
+          <form class="form order-form">
+            <input name="name" placeholder="Введіть ваше ім’я" required>
+            <input name="phone" type="tel" placeholder="Введіть ваш телефон" required>
+            <input name="city" placeholder="Місто" required>
+            <input name="warehouse" placeholder="Нова пошта / відділення">
+            <button type="submit">Замовити зараз</button>
+            <div class="note">Натискаючи кнопку, ви погоджуєтесь на обробку даних для оформлення замовлення.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap features">
+      <div class="feature">🛒<br><b>Зручне замовлення</b><br>у кілька кліків</div>
+      <div class="feature">📦<br><b>Доставка</b><br>Новою Поштою</div>
+      <div class="feature">✅<br><b>Перевірка</b><br>деталей перед відправкою</div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Чому варто звернути увагу</h2>
+        <div class="cards">
+          <div class="card"><h3>⚡ Швидкий нагрів</h3><p>Заміни цей текст на реальну перевагу твого товару.</p></div>
+          <div class="card"><h3>✨ Зручність</h3><p>Додай короткий опис того, чим товар корисний покупцю.</p></div>
+          <div class="card"><h3>💧 Місткий бак</h3><p>Тут можна вказати реальну характеристику товару.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#f7f7f7">
+      <div class="wrap">
+        <h2 class="section-title">Характеристики та комплектація</h2>
+        <div class="specs">
+          <div><b>Потужність</b><span>1200 Вт</span></div>
+          <div><b>Об’єм</b><span>0,5 л</span></div>
+          <div><b>Напруга</b><span>220 В</span></div>
+          <div><b>Час нагрівання</b><span>1 хв</span></div>
+          <div><b>Довжина шнура</b><span>1,45 м</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Відгуки покупців</h2>
+        <div class="reviews">
+          <div class="review">⭐⭐⭐⭐⭐<p>«Дуже зручний товар. Легко користуватися.»</p><b>— Олена</b></div>
+          <div class="review">⭐⭐⭐⭐⭐<p>«Швидко отримала замовлення, товар відповідає опису.»</p><b>— Наталя</b></div>
+          <div class="review">⭐⭐⭐⭐⭐<p>«Компактний і зручний у використанні.»</p><b>— Марія</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#f7f7f7">
+      <div class="wrap">
+        <h2 class="section-title">Як зробити замовлення?</h2>
+        <div class="steps">
+          <div class="step"><div style="font-size:35px">📝</div><h3>1. Залишіть заявку</h3><p>Заповніть форму на сайті.</p></div>
+          <div class="step"><div style="font-size:35px">📞</div><h3>2. Уточнення</h3><p>З вами зв’яжуться для підтвердження деталей.</p></div>
+          <div class="step"><div style="font-size:35px">📦</div><h3>3. Отримайте посилку</h3><p>Оберіть зручний спосіб доставки та оплати.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <h2 class="section-title">Замовити зі знижкою</h2>
+        <form class="form order-form">
+          <input name="name" placeholder="Введіть ваше ім’я" required>
+          <input name="phone" type="tel" placeholder="Введіть ваш телефон" required>
+          <input name="city" placeholder="Місто" required>
+          <input name="warehouse" placeholder="Нова пошта / відділення">
+          <button type="submit">Замовити зараз</button>
+          <div class="note">Ваші дані використовуються для обробки замовлення.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Мій магазин · Політика конфіденційності · Доставка та оплата</footer>
+
+  <script>
+    const API_URL = "/api/order"; // серверний endpoint, токен Telegram тут НЕ зберігається
+
+    document.querySelectorAll(".order-form").forEach(form => {
+      form.addEventListener("submit", async e => {
+        e.preventDefault();
+        const button = form.querySelector("button");
+        button.disabled = true;
+        button.textContent = "Надсилаємо…";
+        const data = Object.fromEntries(new FormData(form).entries());
+        data.product = document.querySelector(".product-name").textContent.trim();
+        data.price = document.querySelector(".current-price").textContent.trim() + " грн";
+
+        try {
+          const res = await fetch(API_URL, {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(data)
+          });
+          if (!res.ok) throw new Error();
+          form.reset();
+          alert("Дякуємо! Заявку отримано.");
+        } catch {
+          alert("Не вдалося надіслати заявку. Перевірте підключення сайту.");
+        } finally {
+          button.disabled = false;
+          button.textContent = "Замовити зараз";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
