@@ -10,7 +10,7 @@ const CHAT_ID = process.env.CHAT_ID;
 
 app.post("/api/order", async (req, res) => {
   try {
-    const { name, phone, city, warehouse, product, price } = req.body || {};
+    const { name, phone, city, warehouse, product, price, quantity, total } = req.body || {};
 
     if (!name || !phone || !city) {
       return res.status(400).json({ ok: false, error: "Заповніть обов'язкові поля" });
@@ -28,7 +28,9 @@ app.post("/api/order", async (req, res) => {
 📍 Місто: ${city}
 📦 Відділення: ${warehouse || "не вказано"}
 🛒 Товар: ${product || "не вказано"}
-💰 Ціна: ${price || "не вказано"}`;
+🔢 Кількість: ${quantity || "1"}
+💰 Ціна за одиницю: ${price || "не вказано"}
+🧾 Разом: ${total || price || "не вказано"}`;
 
     const response = await fetch(
       `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
